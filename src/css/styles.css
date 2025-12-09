@@ -1,18 +1,126 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+body {
+  margin: 0;
+  margin: 24px;
+  color: #222;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  padding: 20px;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search-form input[type='text'] {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+#search-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #1e90ff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s;
+}
+
+#search-form button:hover {
+  background-color: #0c7cd5;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-item .info {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+}
+
+.gallery-item .info p {
+  margin: 0;
+}
+
+.gallery-item .info p b {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+#loader {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #1e90ff;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+#load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 30px;
+  font-size: 16px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#load-more:hover {
+  background-color: #0c7cd5;
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 20px;
+}
