@@ -14,19 +14,33 @@ export function createGallery(images) {
   const markup = images
     .map(
       img => `
-    <li class="gallery-item">
-      <a href="${img.largeImageURL}">
-        <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy" />
-      </a>
-      <div class="info">
-        <p><b>Likes:</b> ${img.likes}</p>
-        <p><b>Views:</b> ${img.views}</p>
-        <p><b>Comments:</b> ${img.comments}</p>
-        <p><b>Downloads:</b> ${img.downloads}</p>
-      </div>
-    </li>`
+      <li class="gallery-item">
+        <a href="${img.largeImageURL}">
+          <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy" />
+        </a>
+        <div class="stats">
+          <div class="stat">
+            <span class="label">Likes</span>
+            <span class="number">${img.likes}</span>
+          </div>
+          <div class="stat">
+            <span class="label">Views</span>
+            <span class="number">${img.views}</span>
+          </div>
+          <div class="stat">
+            <span class="label">Comments</span>
+            <span class="number">${img.comments}</span>
+          </div>
+          <div class="stat">
+            <span class="label">Downloads</span>
+            <span class="number">${img.downloads}</span>
+          </div>
+        </div>
+      </li>
+    `
     )
     .join('');
+
   galleryContainer.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
@@ -36,19 +50,19 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.remove('is-hidden');
+  loader.classList.remove('hidden');
 }
 
 export function hideLoader() {
-  loader.classList.add('is-hidden');
+  loader.classList.add('hidden');
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-hidden');
+  loadMoreBtn.classList.remove('hidden');
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('is-hidden');
+  loadMoreBtn.classList.add('hidden');
 }
 
 export { loadMoreBtn, galleryContainer };

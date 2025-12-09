@@ -30,7 +30,7 @@ form.addEventListener('submit', async e => {
   try {
     const data = await getImagesByQuery(currentQuery, currentPage);
 
-    if (data.hits.length === 0) {
+    if (!data.hits.length) {
       iziToast.error({ title: 'No results', message: 'No images found.' });
       hideLoader();
       return;
