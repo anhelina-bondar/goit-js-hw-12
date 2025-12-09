@@ -14,13 +14,23 @@ form {
 input {
   padding: 8px;
   font-size: 16px;
+  border-radius: 6px;
+  border: solid 1px grey;
 }
 
 button {
   padding: 8px 16px;
   margin-left: 10px;
   font-size: 16px;
+  background-color: #4e75ff;
   cursor: pointer;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+}
+
+button:hover {
+  background-color: #4060d3;
 }
 
 .gallery {
